@@ -10,20 +10,18 @@ on:
 
 jobs:
   lint:
-  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out the code
+      - name: Checkout the code
         uses: actions/checkout@v2
 
       - name: Run Lint
-        run : dart analyze .
+        run: dart analyze .
 
       - name: Upload html test report
         uses: actions/upload-artifact@v2
         with:
-          name: index.html
-          path: app/build/report/lint-results-debug.html
+          name: lint.html
+          path: app/build/reports/lint-results-debug.html
 
 
