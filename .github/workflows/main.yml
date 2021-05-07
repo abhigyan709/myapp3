@@ -15,14 +15,14 @@ jobs:
 
     steps:
       - name: Check out the code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Run Lint
-      - run : dart analyze .
+        run : dart analyze .
 
       - name: Upload html test report
-      - uses: actions/upload-artifact@v2
-      - with:
+        uses: actions/upload-artifact@v2
+        with:
           name: index.html
           path: app/build/report/lint-results-debug.html
 
